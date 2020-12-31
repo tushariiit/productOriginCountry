@@ -38,9 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
     if(search=='890') {
       Navigator.push(context,
           new MaterialPageRoute(builder: (ctxt) => new genuineResult()));
+      search='';
     } else {
       //print('product is fake');
       Navigator.push(context, new MaterialPageRoute(builder: (ctxt) => new fakeResult()));
+      search='';
     }
   }
     /*var element = barcode;
@@ -114,6 +116,17 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     )
                   ],
+                ),
+              ),
+            ),
+            Container(
+              child: Text(
+                barcode+'\n'+search  ,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.blue[700],
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),
